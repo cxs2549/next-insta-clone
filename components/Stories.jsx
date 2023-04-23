@@ -4,7 +4,7 @@ const Stories = ({ data }) => {
   return (
     <div
       id="stories"
-      className="overflow-x-scroll overflow-hidden max-w-[610px]   mt-[60px]  md:mt-0"
+      className="overflow-x-scroll overflow-hidden max-w-[620px]   mt-[60px]  md:mt-0"
     >
       <ul className="flex gap-2 mx-2 pt-8 pb-5 w-full px-2 md:px-0">
         {data.results.map((user, i) => (
