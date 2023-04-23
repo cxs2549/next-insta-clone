@@ -20,9 +20,9 @@ const Home = async () => {
     <>
       <Sidebar />
       <WideSidebar />
-      <div className="flex md:pt-4 gap-6 justify-evenly xl:justify-center w-full">
-        <div className="flex justify-center gap-14">
-          <div className="flex flex-col md:ml-[74px] xl:ml-[244px]">
+      <div className="flex gap-6 justify-evenly xl:justify-center w-full">
+        <div className="flex justify-center gap-14 w-full">
+          <div className="flex flex-col md:ml-[74px] xl:ml-[244px] items-center justify-center w-full md:w-auto">
             <Stories data={data} />
             <div className="pb-12" id="cards">
               {data.results.map((user) => (

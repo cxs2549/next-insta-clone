@@ -2,32 +2,30 @@ import Image from "next/image"
 
 const Stories = ({ data }) => {
   return (
-    <div
+    <ul
       id="stories"
-      className="overflow-x-scroll overflow-hidden max-w-[620px]   mt-[60px]  md:mt-0"
+      className="mt-[60px]  md:mt-0 max-w-[600px] overflow-x-scroll flex gap-4 pb-5 pt-8 w-full pl-2 pr-3"
     >
-      <ul className="flex gap-2 mx-2 pt-8 pb-5 w-full px-2 md:px-0">
-        {data.results.map((user, i) => (
-          <li
-            key={user.name.first.toLowerCase()}
-            className="flex-shrink-0 flex flex-col items-center justify-center pr-4"
-          >
-            <div className="rounded-full overflow-hidden shadow-ring">
-              <Image
-                src={user.picture.large}
-                alt=""
-                height={54}
-                width={54}
-                className=" rounded-full"
-              />
-            </div>
-            <p className="text-xs mt-2 font-medium">
-              {user.name.first.toLowerCase()}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </div>
+      {data.results.map((user, i) => (
+        <li
+          key={user.name.first.toLowerCase()}
+          className="flex-shrink-0 flex flex-col items-center justify-center pr-1"
+        >
+          <div className="rounded-full overflow-hidden shadow-ring">
+            <Image
+              src={user.picture.large}
+              alt=""
+              height={54}
+              width={54}
+              className=" rounded-full"
+            />
+          </div>
+          <p className="text-xs mt-2 font-medium">
+            {user.name.first.toLowerCase()}
+          </p>
+        </li>
+      ))}
+    </ul>
   )
 }
 
