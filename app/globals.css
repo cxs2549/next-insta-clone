@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+html, body {
+  @apply antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+#site-links li::after {
+  content: "·";
+  padding-left: 4px;
+
+
+}
+#site-links li:last-child::after {
+  content: "";
+
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body::-webkit-scrollbar{
+  display: none;
 }
+
+html {
+  scrollbar-width: none;
+}
+
+#stories {
+  scrollbar-width: none;
+}
+
+.speech-bubble {
+  position: relative;
+  width: 20px;
+  height: 0px;
+}
+
+.speech-bubble:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -20px;
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: #dcdcdc transparent transparent;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#cards > div {
+  @apply border-b
+}
+#cards > div:last-child {
+  @apply border-none
+}
+
+
+
