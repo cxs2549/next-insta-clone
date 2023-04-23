@@ -4,7 +4,7 @@ const Stories = ({ data }) => {
   return (
     <ul
       id="stories"
-      className="mt-[60px]  md:mt-0 max-w-[600px] overflow-x-scroll flex gap-4 pb-5 pt-8 w-full pl-2 pr-3"
+      className="mt-[60px]  md:mt-0 max-w-[585px] overflow-x-scroll flex gap-4 pb-5 pt-8 w-full pl-2 pr-3"
     >
       {data.results.map((user, i) => (
         <li
